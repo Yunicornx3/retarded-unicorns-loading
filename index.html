@@ -8,7 +8,7 @@
 <body>
   <div class="background"></div>
 
-  <!-- Logo oben -->
+  <!-- Logo -->
   <div class="logo">
     <img src="RetardedUnicornProfilbild.png" alt="Server Logo">
   </div>
@@ -16,11 +16,13 @@
   <div class="container">
     <h1 class="title">[GER/TTT] Retarded Unicorns</h1>
 
+    <!-- Fortschrittsbalken -->
     <div class="progress">
       <div class="bar"></div>
     </div>
     <p class="status">Verbinde mit Server...</p>
 
+    <!-- Regeln & Team -->
     <div class="content">
       <div class="box rules">
         <h2>📜 Regeln</h2>
@@ -40,18 +42,14 @@
           <li>Supporterin: Lisa</li>
         </ul>
       </div>
-
-      <div class="box music">
-        <h2>🎶 Musik</h2>
-        <iframe width="300" height="150"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
     </div>
   </div>
+
+  <!-- Musik im Hintergrund -->
+  <audio autoplay loop>
+    <source src="musik.mp3" type="audio/mpeg">
+    <source src="musik.ogg" type="audio/ogg">
+  </audio>
 
   <script src="script.js"></script>
 </body>
