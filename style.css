@@ -81,53 +81,49 @@ body {
   animation: fadeIn 3s ease-in-out;
 }
 
-/* Boxen-Container */
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;   /* gleiche Höhe */
-  gap: 30px;
-  flex-wrap: wrap;
+/* Zentrale Box */
+.main-box {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  width: 70%;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
   animation: slideUp 2s ease-in-out;
 }
 
-/* Boxen */
-.box {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 20px;
-  width: 280px;
-  min-height: 220px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  backdrop-filter: blur(12px);
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,0,255,0.7);
-}
-
-h2 {
-  margin-bottom: 10px;
+/* Überschriften */
+.main-box h2 {
+  margin: 20px 0 10px 0;
   color: #ff99ff;
 }
 
-/* Listen */
-ul {
+/* Team-Liste */
+.team-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 20px 0;
   text-align: center;
 }
-
-ul li {
-  margin: 8px 0;
+.team-list li {
+  margin: 5px 0;
   font-size: 1.1em;
+}
+
+/* Regeln */
+.rules-list {
+  list-style: decimal;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 40px;
+  padding-left: 20px; /* Platz für Zahlen */
+  text-align: left;
+  max-width: 800px;
+  margin: auto;
+}
+.rules-list li {
+  font-size: 1.05em;
 }
 
 /* Animationen */
