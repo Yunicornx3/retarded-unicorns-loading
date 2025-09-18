@@ -1,0 +1,88 @@
+/* Allgemeines Styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* Hintergrund */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("background.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(6px) brightness(0.5);
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  padding-top: 5vh;
+}
+
+.title {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px black;
+}
+
+/* Fortschrittsbalken */
+.progress {
+  width: 70%;
+  height: 30px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  animation: load 12s linear forwards;
+}
+
+@keyframes load {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.status {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* Boxen */
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  box-shadow: 0 0 10px black;
+  transition: transform 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
