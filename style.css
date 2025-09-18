@@ -1,9 +1,10 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, sans-serif;
-  color: white;
+  color: #ffffff;
   overflow: hidden;
-  text-shadow: 0 0 5px black;
+  background: #0a0a0a;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 /* Hintergrund */
@@ -13,7 +14,7 @@ body {
   height: 100%;
   background: url("background.jpg") no-repeat center center;
   background-size: cover;
-  filter: blur(6px) brightness(0.5);
+  filter: blur(8px) brightness(0.35) contrast(1.2);
   z-index: -1;
 }
 
@@ -23,43 +24,43 @@ body {
   margin-top: 20px;
 }
 .logo img {
-  width: 120px;
+  width: 130px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  box-shadow: 0 0 25px rgba(255,0,255,0.7), 0 0 50px rgba(0,255,255,0.5);
   animation: float 4s ease-in-out infinite;
 }
 
 /* Floating Effekt */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }
 
-/* Titel */
+/* Container & Titel */
 .container {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #ffccff;
-  text-shadow: 0 0 15px #ff00ff;
+  font-size: 3em;
+  margin-bottom: 25px;
+  color: #ff66ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 30px #ff00ff, 0 0 50px #ff66ff;
   animation: fadeIn 2s ease-in-out;
 }
 
 /* Fortschrittsbalken */
 .progress {
   width: 60%;
-  height: 25px;
+  height: 28px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
   overflow: hidden;
-  margin-bottom: 15px;
-  backdrop-filter: blur(10px);
-  animation: fadeIn 2.5s ease-in-out;
+  margin-bottom: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
 }
 
 .bar {
@@ -67,63 +68,64 @@ body {
   width: 0%;
   background: linear-gradient(90deg, #ff00ff, #00ffff);
   animation: load 12s linear forwards;
-  box-shadow: 0 0 10px #00ffff;
-}
-
-@keyframes load {
-  0% { width: 0%; }
-  100% { width: 100%; }
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff inset;
+  border-radius: 25px;
 }
 
 .status {
-  font-size: 1.2em;
-  margin-bottom: 40px;
+  font-size: 1.3em;
+  margin-bottom: 45px;
+  color: #ffffff;
+  text-shadow: 0 0 15px #00ffff;
   animation: fadeIn 3s ease-in-out;
 }
 
 /* Zentrale Box */
 .main-box {
-  background: rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 20px;
+  background: rgba(20,20,20,0.55);
+  padding: 35px;
+  border-radius: 25px;
   width: 70%;
   margin: auto;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(255,0,255,0.3), 0 0 50px rgba(0,255,255,0.2);
+  backdrop-filter: blur(15px);
   animation: slideUp 2s ease-in-out;
 }
 
 /* Überschriften */
 .main-box h2 {
-  margin: 20px 0 10px 0;
+  margin: 20px 0 15px 0;
   color: #ff99ff;
+  text-shadow: 0 0 10px #ff66ff;
 }
 
 /* Team-Liste */
 .team-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 25px 0;
   text-align: center;
 }
 .team-list li {
-  margin: 5px 0;
-  font-size: 1.1em;
+  margin: 6px 0;
+  font-size: 1.2em;
+  text-shadow: 0 0 8px #00ffff;
 }
 
 /* Regeln */
 .rules-list {
   list-style: decimal;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px 40px;
-  padding-left: 20px; /* Platz für Zahlen */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 45px;
+  padding-left: 20px;
   text-align: left;
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
 }
 .rules-list li {
-  font-size: 1.05em;
+  font-size: 1.1em;
+  text-shadow: 0 0 5px #ff00ff;
 }
 
 /* Animationen */
@@ -133,6 +135,11 @@ body {
 }
 
 @keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
+  from { transform: translateY(60px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes load {
+  0% { width: 0%; }
+  100% { width: 100%; }
 }
