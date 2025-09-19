@@ -162,3 +162,40 @@ body {
   from { transform: translateY(60px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+/* Musik-Player unten links */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(10,10,10,0.6);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff00ff, 0 0 20px #00ffff;
+  width: 260px;
+  text-align: center;
+}
+
+.music-player p {
+  margin: 5px 0;
+}
+
+.now-playing {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.song-title {
+  font-size: 1.1em;
+  color: #ffccff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}
+
+/* Visualizer Canvas */
+#visualizer {
+  width: 100%;
+  height: 60px;
+  display: block;
+  margin-top: 8px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
