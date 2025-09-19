@@ -19,7 +19,11 @@ const audio = document.getElementById("bg-music");
 const songTitle = document.querySelector(".song-title");
 
 const playlist = [
-  { src: "FutureRemix98.mp3", title: "Future Remix 98" }
+  { src: "musik/FutureRemix98.mp3", title: "FutureRemix98" },
+  { src: "musik/track2.mp3", title: "Track 2" },
+  { src: "musik/track3.mp3", title: "Track 3" },
+  { src: "musik/track4.mp3", title: "Track 4" },
+  { src: "musik/track5.mp3", title: "Track 5" }
 ];
 
 // Zufälligen Song starten
