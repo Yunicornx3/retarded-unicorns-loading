@@ -19,7 +19,7 @@ const audio = document.getElementById("bg-music");
 const songTitle = document.querySelector(".song-title");
 
 const playlist = [
-  { src: "musik/FutureRemix98.mp3", title: "FutureRemix98" },
+  { src: "musik/FutureRemix98.ogg", title: "FutureRemix98" },
   { src: "musik/track2.mp3", title: "Track 2" },
   { src: "musik/track3.mp3", title: "Track 3" },
   { src: "musik/track4.mp3", title: "Track 4" },
