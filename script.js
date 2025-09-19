@@ -16,8 +16,8 @@ setInterval(() => {
 
 // Musik + Visualizer
 const songs = [
-  { file: "musik/FutureRemix98.ogg", title: "Future Remix 98", volume: 0.5 },
-  { file: "musik/song2.mp3", title: "Song 2", volume: 0.4 },
+  { file: "musik/FutureRemix98.ogg", title: "Future Remix 98", volume: 0.1 },
+  { file: "musik/Children.ogg", title: "Robert Miles - Children", volume: 0.1 },
   { file: "musik/song3.mp3", title: "Song 3", volume: 0.6 }
 ];
 
