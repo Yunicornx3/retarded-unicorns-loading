@@ -1,11 +1,4 @@
-// --- Map Event aus Lua empfangen ---
-window.addEventListener("UpdateMap", function(e) {
-    const mapName = e.detail;
-    updateMap(mapName); // ruft deine bestehende Funktion auf
-});
-
-
-// --- Lade-Status Rotation ---
+// Lade-Status Rotation
 const status = document.querySelector(".status");
 const messages = [
   "Lade Texturen...",
@@ -21,7 +14,7 @@ setInterval(() => {
   i++;
 }, 2000);
 
-// --- Musik + Visualizer ---
+// Musik + Visualizer
 const songs = [
   { file: "musik/FutureRemix98.ogg", title: "Future Remix 98", volume: 0.5 },
   { file: "musik/song2.mp3", title: "Song 2", volume: 0.4 },
@@ -31,6 +24,7 @@ const songs = [
 const audio = document.getElementById("bg-music");
 const songTitle = document.querySelector(".song-title");
 
+// Zufälligen Song starten
 function playRandomSong() {
   const song = songs[Math.floor(Math.random() * songs.length)];
   audio.src = song.file;
@@ -39,6 +33,7 @@ function playRandomSong() {
   audio.play();
 }
 playRandomSong();
+
 audio.addEventListener("ended", playRandomSong);
 
 // Visualizer
@@ -76,24 +71,10 @@ function draw() {
 }
 draw();
 
-// AudioContext Policy Fix
+// AudioContext Policy Fix (für Browser)
 document.body.addEventListener("click", () => {
   if (audioCtx.state === "suspended") {
     audioCtx.resume();
     audio.play();
   }
 });
-
-// --- Map Anzeige ---
-function updateMap(mapName) {
-  const img = document.getElementById("map-img");
-  const name = document.getElementById("map-name");
-
-  name.textContent = "Map: " + mapName;
-
-  const mapImagePath = "maps/" + mapName + ".jpg";
-  img.src = mapImagePath;
-}
-
-// Beispiel Fallback: Map setzen, falls keine Übergabe via Lua
-updateMap("ttt_minecraft_b5"); // Beispiel
