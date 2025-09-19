@@ -19,17 +19,18 @@ const audio = document.getElementById("bg-music");
 const songTitle = document.querySelector(".song-title");
 
 const playlist = [
-  { src: "musik/FutureRemix98.ogg", title: "FutureRemix98" },
-  { src: "musik/track2.mp3", title: "Track 2" },
-  { src: "musik/track3.mp3", title: "Track 3" },
-  { src: "musik/track4.mp3", title: "Track 4" },
-  { src: "musik/track5.mp3", title: "Track 5" }
+  { src: "musik/track1.mp3", title: "Track 1", volume: 0.5 },
+  { src: "musik/track2.mp3", title: "Track 2", volume: 0.3 },
+  { src: "musik/track3.mp3", title: "Track 3", volume: 0.6 },
+  { src: "musik/track4.mp3", title: "Track 4", volume: 0.4 },
+  { src: "musik/track5.mp3", title: "Track 5", volume: 0.5 }
 ];
 
 // Zufälligen Song starten
 function playRandomSong() {
   const song = playlist[Math.floor(Math.random() * playlist.length)];
   audio.src = song.src;
+  audio.volume = song.volume; // individuelle Lautstärke
   songTitle.textContent = song.title;
   audio.play();
 }
@@ -49,7 +50,7 @@ const analyser = audioCtx.createAnalyser();
 const source = audioCtx.createMediaElementSource(audio);
 source.connect(analyser);
 analyser.connect(audioCtx.destination);
-analyser.fftSize = 256;
+analyser.fftSize = 128;
 
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
@@ -58,22 +59,23 @@ function draw() {
   requestAnimationFrame(draw);
   analyser.getByteFrequencyData(dataArray);
 
-  ctx.fillStyle = "rgba(0,0,0,0.2)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const barWidth = (canvas.width / bufferLength) * 2.5;
+  const barWidth = (canvas.width / bufferLength) * 1.5;
   let x = 0;
 
   for (let i = 0; i < bufferLength; i++) {
-    const barHeight = dataArray[i] / 2;
-    ctx.fillStyle = `rgb(${barHeight+100}, 50, 200)`;
+    let barHeight = dataArray[i];
+    barHeight = Math.min(barHeight, 100); // Deckeln → nicht zu krass
+
+    ctx.fillStyle = `rgb(${100+barHeight}, 50, 200)`;
     ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
     x += barWidth + 1;
   }
 }
 draw();
 
-// Fix: AudioContext muss nach User-Interaktion starten (Browser-Policy)
+// Fix: AudioContext erst nach User-Interaktion starten
 document.body.addEventListener("click", () => {
   if (audioCtx.state === "suspended") {
     audioCtx.resume();
