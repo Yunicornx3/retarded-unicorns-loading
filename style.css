@@ -7,7 +7,7 @@ body {
   background: #0a0a0a;
 }
 
-/* Hintergrund + neon-Overlay */
+/* Hintergrund + Neon Overlay */
 .background {
   position: fixed;
   width: 100%;
@@ -25,6 +25,25 @@ body {
   background: linear-gradient(135deg, rgba(255,0,255,0.15), rgba(0,255,255,0.15));
   mix-blend-mode: overlay;
   z-index: -1;
+}
+
+/* Aktuelle Map */
+.map-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  z-index: 10;
+}
+
+.map-container img {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #ff00ff, 0 0 40px #00ffff;
+  margin-bottom: 5px;
 }
 
 /* Logo */
@@ -111,7 +130,6 @@ body {
   animation: slideUp 2s ease-in-out;
 }
 
-/* Überschriften */
 .main-box h2 {
   margin: 20px 0 15px 0;
   color: #ff99ff;
@@ -162,6 +180,7 @@ body {
   from { transform: translateY(60px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
 /* Musik-Player unten links */
 .music-player {
   position: fixed;
