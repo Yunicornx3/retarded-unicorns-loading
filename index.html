@@ -45,13 +45,16 @@
     </div>
   </div>
 
-  <!-- Musik -->
-  <audio autoplay loop>
-    <source src="musik.mp3" type="audio/mpeg">
-    <source src="musik.ogg" type="audio/ogg">
-  </audio>
+  <!-- Musik & Visualizer -->
+  <div class="music-player">
+    <p class="now-playing">🎶 Now Playing:</p>
+    <p class="song-title">Lädt...</p>
+    <canvas id="visualizer"></canvas>
+  </div>
 
-  <!-- Lade-Status JS -->
+  <audio id="bg-music" autoplay></audio>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
