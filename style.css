@@ -29,6 +29,7 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
+/* Floating Effekt */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -45,6 +46,7 @@ body {
   margin-bottom: 20px;
   color: #ffccff;
   text-shadow: 0 0 15px #ff00ff;
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* Fortschrittsbalken */
@@ -56,6 +58,8 @@ body {
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 15px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .bar {
@@ -74,9 +78,10 @@ body {
 .status {
   font-size: 1.2em;
   margin-bottom: 40px;
+  animation: fadeIn 3s ease-in-out;
 }
 
-/* Content mit 2 Boxen nebeneinander */
+/* Content-Boxen */
 .content {
   display: flex;
   justify-content: center;
@@ -86,7 +91,7 @@ body {
 }
 
 .box {
-  flex: 1 1 300px;
+  flex: 1 1 250px;
   background: rgba(255,255,255,0.08);
   padding: 25px;
   border-radius: 20px;
@@ -100,13 +105,41 @@ body {
   color: #ff99ff;
 }
 
-.rules-list {
-  list-style: decimal;
-  text-align: left;
-  max-width: 400px;
-  margin: auto;
+/* Links */
+.links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.links-list li {
+  margin: 8px 0;
+}
+.links-list a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.links-list a:hover {
+  color: #ff99ff;
 }
 
+/* Regeln */
+.rules-list {
+  list-style: decimal;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 40px;
+  padding-left: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+.rules-list li {
+  font-size: 1.05em;
+}
+
+/* Team */
 .team-list {
   list-style: none;
   padding: 0;
@@ -117,36 +150,30 @@ body {
   font-size: 1.1em;
 }
 
-/* Music Player unten links */
+/* Musik-Player */
 .music-player {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: rgba(0,0,0,0.4);
-  padding: 15px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 20px;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.6);
-  width: 260px;
-  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.now-playing {
-  font-size: 0.9em;
-  color: #ccc;
-  margin: 0;
+.music-player p {
+  margin: 5px 0;
 }
 
-.song-title {
-  font-size: 1.1em;
-  color: #ffccff;
-  margin: 5px 0 10px 0;
-}
-
-/* Visualizer Canvas */
 #visualizer {
-  width: 100%;
+  width: 250px;
   height: 60px;
   display: block;
-  background: rgba(0,0,0,0.2);
-  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
