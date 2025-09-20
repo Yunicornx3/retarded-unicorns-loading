@@ -12,7 +12,7 @@ const teamMembers = [
   // zusätzliche Beispiel-Einträge (ersetzbar)
   { role: "Bewirb dich gerne bei uns",      name: "Als Teamler" },
   { role: "Alle weiteren Infos bei uns",  name: "auf dem Discord" },
-  { role: "https://discord.gg/NcaRsM7MHP",  name: "[R.U]DeinName" }
+  { role: "https://discord.gg/NcaRsM7MHP",  name: "[R.U]DeinName" },
   //{ role: "Supporter",  name: "[R.U]" }
 ];
 
@@ -129,8 +129,8 @@ fallbackFinishTimeout = setTimeout(() => {
    --------------------------- */
 
 const songs = [
-  { file: "musik/FutureRemix98.ogg", title: "Future Remix 98", volume: 0.035 },
-  { file: "musik/Children.ogg", title: "Robert Miles - Children", volume: 0.035 },
+  { file: "musik/FutureRemix98.ogg", title: "Future Remix 98", volume: 0.5 },
+  { file: "musik/song2.mp3", title: "Song 2", volume: 0.4 },
   { file: "musik/song3.mp3", title: "Song 3", volume: 0.6 }
 ];
 
