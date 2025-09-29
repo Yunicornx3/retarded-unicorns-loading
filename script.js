@@ -131,7 +131,8 @@ fallbackFinishTimeout = setTimeout(() => {
 const songs = [
   { file: "musik/FutureRemix98.ogg", title: "Future Remix 98", volume: 0.025 },
   { file: "musik/Children.ogg", title: "Robert Miles - Children", volume: 0.025 },
-  { file: "musik/song3.mp3", title: "Song 3", volume: 0.025 }
+  { file: "musik/DarudeSandstorm.ogg", title: "Darude - Sandstorm", volume: 0.025 },
+  { file: "musik/AliceDeejayBetterOffAlone.ogg", title: "Alice Deejay - Better Off Alone", volume: 0.025 }
 ];
 
 const audio = document.getElementById("bg-music");
